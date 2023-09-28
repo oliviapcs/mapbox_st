@@ -136,23 +136,23 @@ pls5["geometry"]=pls5["centroid"]
 pls5['tag'] = 'Healthcare'
 
 
-path = 'data\sanja_centroides.geojson'
-with open(path, encoding="utf8") as f:
-    gj = geojson.load(f)
+#path = 'data\sanja_centroides.geojson'
+#with open(path, encoding="utf8") as f:
+#    gj = geojson.load(f)
 
-coordinates = []
+#coordinates = []
 
-for i in range(len(gj['features'])):
-  coordinates.append(gj['features'][i]['geometry']['coordinates'])
+#for i in range(len(gj['features'])):
+#  coordinates.append(gj['features'][i]['geometry']['coordinates'])
 
-sanja_centroide = pd.DataFrame(coordinates).rename(columns = {0:'x', 1: 'y'})
-sanja_centroide['tag'] = 'Centroide Sanja'
+#sanja_centroide = pd.DataFrame(coordinates).rename(columns = {0:'x', 1: 'y'})
+#sanja_centroide['tag'] = 'Centroide Sanja'
 
-pls = pd.concat([pls1, pls2, pls3, pls4, pls5, sanja_centroide])
+pls = pd.concat([pls1, pls2, pls3, pls4, pls5])
 
 options_amenities = st.multiselect(
     'Amenities',
-    ['Centroide Sanja', 'Entertainment', 'Civic', 'F&B', 'Education', 'Healthcare'],
+    ['Entertainment', 'Civic', 'F&B', 'Education', 'Healthcare'],
     ['F&B']
     )
 
