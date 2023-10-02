@@ -17,7 +17,7 @@ st.set_page_config(
     page_icon="🧊",
 )
 
-st.title("Know your place")
+st.title("Explore your world")
 
 
 
